@@ -1,0 +1,73 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Hello, I'm {System.Bot.Name}. How can I help?
+        speak:
+          - Thanks for calling, how can I help?
+
+    - kind: Question
+      id: question_hlAbpd
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: Please select the option from below.
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Event Registration
+              displayName: Event Registration
+
+            - id: Event Information
+              displayName: Event Information
+
+    - kind: ConditionGroup
+      id: conditionGroup_ky1SDw
+      conditions:
+        - id: conditionItem_rYF4cb
+          condition: =Topic.Var1 = 'Default_eventBoothReservation.topic.ConversationStart.main.question_hlAbpd'.'Event Registration'
+          actions:
+            - kind: BeginDialog
+              id: of3PAD
+              dialog: Default_eventBoothReservation.topic.RegistrationForm
+
+        - id: conditionItem_qvjw9u
+          condition: =Topic.Var1 = 'Default_eventBoothReservation.topic.ConversationStart.main.question_hlAbpd'.'Event Information'
+          actions:
+            - kind: Question
+              id: question_5pkn2K
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var2
+              prompt: Please ask your question.
+              entity: StringPrebuiltEntity
+
+            - kind: SearchAndSummarizeContent
+              id: searchAndSummarizeContent_E4asxs
+              userInput: =Topic.Var2
+              publicDataSource:
+                kind: PublicSiteSearchDataSource
+                sites:
+                  - "https://powerplatformconf.com/"
+                  - "https://powerplatformconf.com/#!/news"
+                  - "https://www.google.com/"
+
+              sharePointSearchDataSource: {}
+              customDataSource: {}
+
+            - kind: BeginDialog
+              id: NX1dJi
+              dialog: Default_eventBoothReservation.topic.EndofConversation
+
+    - kind: GotoAction
+      id: EPO0v4
+      actionId: question_hlAbpd

@@ -1,0 +1,14 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="Default_eventBoothReservation.topic.RegistrationForm" workflowid.workflowid="58c28c78-9b57-ee11-be6f-000d3a9d75c4">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="Default_eventBoothReservation.topic.RegistrationForm" workflowid.workflowid="7a4354b5-5a56-ee11-be6f-000d3a9d75c4">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="Default_eventBoothReservation.topic.RegistrationForm" workflowid.workflowid="99535747-8757-ee11-be6f-000d3a9d75c4">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="Default_eventBoothReservation.topic.RegistrationForm" workflowid.workflowid="de0e854e-0356-ee11-be6f-000d3a9d75c4">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>

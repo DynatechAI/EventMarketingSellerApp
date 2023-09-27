@@ -1,0 +1,110 @@
+<ImportExportXml version="9.2.23083.184" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>CRMRoadMap001</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="CRM RoadMap 001" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.4</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>DefaultPublisherorg833ee31c</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Default Publisher for org833ee31c" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Default publisher for this organization" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>new</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="new_booth" behavior="0" />
+      <RootComponent type="1" schemaName="new_boothbooking" behavior="0" />
+      <RootComponent type="1" schemaName="new_event" behavior="0" />
+      <RootComponent type="29" id="{58c28c78-9b57-ee11-be6f-000d3a9d75c4}" behavior="0" />
+      <RootComponent type="29" id="{7a4354b5-5a56-ee11-be6f-000d3a9d75c4}" behavior="0" />
+      <RootComponent type="29" id="{99535747-8757-ee11-be6f-000d3a9d75c4}" behavior="0" />
+      <RootComponent type="29" id="{ab61fa3e-1d59-ee11-be6f-000d3a9d75c4}" behavior="0" />
+      <RootComponent type="29" id="{de0e854e-0356-ee11-be6f-000d3a9d75c4}" behavior="0" />
+      <RootComponent type="300" schemaName="new_deskreservationsystemvideodemo_7c10b" behavior="0" />
+      <RootComponent type="372" id="{2118721d-a715-453a-a962-6f6f6f09fb27}" schemaName="new_5Fbarcode-20generator" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="cr773_officebooking" displayName="OfficeBooking" solution="Active" />
+        <Dependent type="300" schemaName="new_deskreservationsystemvideodemo_7c10b" displayName="Event Session Selection" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="cr773_officeinfo" displayName="OfficeInfo" solution="Active" />
+        <Dependent type="300" schemaName="new_deskreservationsystemvideodemo_7c10b" displayName="Event Session Selection" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_aimodel" displayName="AI Model" solution="msdyn_AISolution (202308.3.15.1)">
+          <package>msdyn_AISolutionAnchor (202308.3.15.1)</package>
+        </Required>
+        <Dependent type="300" schemaName="new_deskreservationsystemvideodemo_7c10b" displayName="Event Session Selection" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

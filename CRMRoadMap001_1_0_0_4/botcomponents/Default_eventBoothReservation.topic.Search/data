@@ -1,0 +1,30 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  priority: -1
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: search-content
+      userInput: =System.Activity.Text
+      moderationLevel: Low
+      tone: Friendly
+      variable: Topic.Answer
+      publicDataSource:
+        kind: PublicSiteSearchDataSource
+        sites:
+          - "https://powerplatformconf.com/"
+          - "https://powerplatformconf.com/#!/news"
+          - "https://www.google.com"
+
+      sharePointSearchDataSource: {}
+
+    - kind: ConditionGroup
+      id: has-answer-conditions
+      conditions:
+        - id: has-answer
+          condition: =!IsBlank(Topic.Answer)
+          actions:
+            - kind: EndDialog
+              id: end-topic
+              clearTopicQueue: true

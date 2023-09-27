@@ -1,0 +1,147 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedoffice365_834e7"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "03354224-2ccb-4ea4-9dd6-9842715dbf6f"
+          },
+          "type": "Request",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "CompanyName_Inputs": {
+                  "type": "any",
+                  "description": "Inputs",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "TransactionDate_Inputs": {
+                  "type": "any",
+                  "description": "Inputs",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "Total_Inputs": {
+                  "type": "any",
+                  "description": "Inputs",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "Address_Inputs": {
+                  "type": "any",
+                  "description": "Inputs",
+                  "x-ms-powerflows-param-ispartial": false
+                }
+              },
+              "required": [
+                "CompanyName_Inputs",
+                "TransactionDate_Inputs",
+                "Total_Inputs",
+                "Address_Inputs"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {
+            "Address": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "94ac030b-261d-4ff1-b9f5-a06b59a093cb"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "RajuSoneri@TrailRaju.onmicrosoft.com;Nalini@TrailRaju.onmicrosoft.com",
+              "emailMessage/Subject": "Invoice for Services Rendered",
+              "emailMessage/Body": "<!DOCTYPE html>\n<html>\n<head>\n<title>Page Title</title>\n</head>\n<body>\n\nDear @{outputs('Company_Name')}<br /><br />\n\nPlease Find the Invoice Details.<br /><br />\n\n\n<table border=\"1\">\n<tr>\n<td colspan=\"2\" align=\"center\">@{outputs('Company_Name')}</td>\n\n</tr>\n<tr>\n<td>Address : - </td>\n<td>@{outputs('Address')}</td>\n</tr>\n<tr>\n<td>Due Date : - </td>\n<td>@{outputs('Transaction_Date')}</td>\n</tr>\n<tr>\n<td>Payment : - </td>\n<td>@{outputs('Total')}</td>\n</tr>\n\n</table><br /><br />\n\nThank you,<br />\nRaju Soneri\n\n</body>\n</html>\n\n\n",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Company_Name": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "940a0868-2c21-425b-b930-29341102d06e"
+          },
+          "type": "Compose",
+          "inputs": "@triggerBody()['CompanyName_Inputs']"
+        },
+        "Transaction_Date": {
+          "runAfter": {
+            "Company_Name": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "27755be5-fe20-4a6d-a012-efd408d51935"
+          },
+          "type": "Compose",
+          "inputs": "@triggerBody()['TransactionDate_Inputs']"
+        },
+        "Total": {
+          "runAfter": {
+            "Transaction_Date": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "411e83c4-23fb-466c-acc2-4fe758edc477"
+          },
+          "type": "Compose",
+          "inputs": "@triggerBody()['Total_Inputs']"
+        },
+        "Address": {
+          "runAfter": {
+            "Total": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0cb3bf01-68d7-4eef-bf41-a9d1372f5d38"
+          },
+          "type": "Compose",
+          "inputs": "@triggerBody()['Address_Inputs']"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

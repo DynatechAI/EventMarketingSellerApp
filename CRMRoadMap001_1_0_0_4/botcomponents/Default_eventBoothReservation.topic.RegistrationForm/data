@@ -1,0 +1,3884 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Untitled
+    triggerQueries:
+      - Event Registration
+      - List of Event
+      - Event
+      - Event Registration Form
+      - Details of event
+      - event
+      - form
+      - event list
+
+  actions:
+    - kind: AdaptiveCardPrompt
+      id: 74db4A
+      card: |-
+        {
+          "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+          "type": "AdaptiveCard",
+          "version": "1.5",
+          "body": [
+              {
+                  "type": "Image",
+                  "url": "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png",
+                  "horizontalAlignment": "Left"
+              },
+              {
+                  "type": "TextBlock",
+                  "text": "Please select your Event:",
+                  "wrap": true,
+                  "style": "heading",
+                  "size": "Medium"
+              }
+          ],
+          "actions": [
+              {
+                  "type": "Action.ShowCard",
+                  "title": "Full Conference Only",
+                  "card": {
+                      "type": "AdaptiveCard",
+                      "body": [
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Full Conference Only",
+                              "horizontalAlignment": "Center",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Date : October 1, 2023",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Price: $1899",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Name",
+                              "id": "id1",
+                              "isRequired": true,
+                              "errorMessage": "Name is required"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Email",
+                              "style": "Email",
+                              "isRequired": true,
+                              "format": "email",
+                              "errorMessage": "Email is required",
+                              "id": "id2"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Phone",
+                              "style": "Tel",
+                              "isRequired": true,
+                              "errorMessage": "Phone is required",
+                              "id": "id3"
+                          }
+                      ],
+                      "actions": [
+                          {
+                              "type": "Action.Submit",
+                              "title": "Submit",
+                              "data": {
+                                  "formAction": "submitUserData"
+                              }
+                          }
+                      ]
+                  },
+                  "style": "positive"
+              },
+              {
+                  "type": "Action.ShowCard",
+                  "title": "SHOW PACKAGE - 1 WORKSHOP",
+                  "card": {
+                      "type": "AdaptiveCard",
+                      "body": [
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " SHOW PACKAGE - 1 WORKSHOP Includes full conference registration, ONE optional full-day workshop",
+                              "horizontalAlignment": "Center",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Date : October 2, 2023",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Price: $2399",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Name",
+                              "id": "id4",
+                              "isRequired": true,
+                              "errorMessage": "Name is required"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Email",
+                              "style": "Email",
+                              "isRequired": true,
+                              "errorMessage": "Email is required",
+                              "id": "id5"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Phone",
+                              "style": "Tel",
+                              "isRequired": true,
+                              "errorMessage": "Phone is required",
+                              "id": "id6"
+                          }
+                      ],
+                      "actions": [
+                          {
+                              "type": "Action.Submit",
+                              "title": "Submit",
+                              "data": {
+                                  "formAction": "submitUserData1"
+                              }
+                          }
+                      ]
+                  },
+                  "style": "positive"
+              },
+              {
+                  "type": "Action.ShowCard",
+                  "title": "SHOW PACKAGE - 2 WORKSHOP",
+                  "card": {
+                      "type": "AdaptiveCard",
+                      "body": [
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " COMPLETE PACKAGE - 2 WORKSHOPS Includes full conference registration, TWO optional full-day workshops",
+                              "horizontalAlignment": "Center",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Date : October 6, 2023",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Price: $2899",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Name",
+                              "id": "id7",
+                              "isRequired": true,
+                              "errorMessage": "Name is required"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Email",
+                              "style": "Email",
+                              "isRequired": true,
+                              "format": "email",
+                              "errorMessage": "Email is required",
+                              "id": "id8"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Phone",
+                              "style": "Tel",
+                              "isRequired": true,
+                              "errorMessage": "Phone is required",
+                              "id": "id9"
+                          }
+                      ],
+                      "actions": [
+                          {
+                              "type": "Action.Submit",
+                              "title": "Submit",
+                              "data": {
+                                  "formAction": "submitUserData2"
+                              }
+                          }
+                      ]
+                  },
+                  "style": "positive"
+              },
+              {
+                  "type": "Action.ShowCard",
+                  "title": "SHOW PACKAGE - 3 WORKSHOP",
+                  "card": {
+                      "type": "AdaptiveCard",
+                      "body": [
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " COMPLETE PACKAGE - 3 WORKSHOPS Includes full conference registration,THREE optional full-day workshops",
+                              "horizontalAlignment": "Center",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Date : October 5, 2023",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "TextBlock",
+                              "size": "Medium",
+                              "weight": "Bolder",
+                              "text": " Price: $3449",
+                              "horizontalAlignment": "Left",
+                              "wrap": true,
+                              "style": "heading"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Name",
+                              "id": "id10",
+                              "isRequired": true,
+                              "errorMessage": "Name is required"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Email",
+                              "style": "Email",
+                              "isRequired": true,
+                              "format": "email",
+                              "errorMessage": "Email is required",
+                              "id": "id11"
+                          },
+                          {
+                              "type": "Input.Text",
+                              "label": "Phone",
+                              "style": "Tel",
+                              "isRequired": true,
+                              "errorMessage": "Phone is required",
+                              "id": "id12"
+                          }
+                      ],
+                      "actions": [
+                          {
+                              "type": "Action.Submit",
+                              "title": "Submit",
+                              "data": {
+                                  "formAction": "submitUserData3"
+                              }
+                          }
+                      ]
+                  },
+                  "style": "positive"
+              }
+          ]
+        }
+      output:
+        binding:
+          actionSubmitId: Topic.actionSubmitId
+          formAction: Topic.formAction
+          id1: Topic.id1
+          id10: Topic.id10
+          id11: Topic.id11
+          id12: Topic.id12
+          id2: Topic.id2
+          id3: Topic.id3
+          id4: Topic.id4
+          id5: Topic.id5
+          id6: Topic.id6
+          id7: Topic.id7
+          id8: Topic.id8
+          id9: Topic.id9
+
+      outputType:
+        properties:
+          actionSubmitId: String
+          formAction: String
+          id1: String
+          id10: String
+          id11: String
+          id12: String
+          id2: String
+          id3: String
+          id4: String
+          id5: String
+          id6: String
+          id7: String
+          id8: String
+          id9: String
+
+    - kind: ConditionGroup
+      id: conditionGroup_gFz8S9
+      conditions:
+        - id: conditionItem_Ac27IE
+          condition: =Topic.formAction = "submitUserData"
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_ZIehC7
+              input:
+                binding:
+                  number: 1
+                  text: =Topic.id1
+                  text_1: =Topic.id2
+                  text_2: =Topic.id3
+
+              output:
+                binding:
+                  event_date: Topic.EventDate
+                  event_id: Topic.EventID
+                  eventguid: Topic.EventGUID
+
+              flowId: de0e854e-0356-ee11-be6f-000d3a9d75c4
+
+            - kind: SendActivity
+              id: sendActivity_loU0rc
+              activity:
+                attachments:
+                  - kind: AdaptiveCardTemplate
+                    cardContent: |-
+                      ={
+                        type: "AdaptiveCard",
+                        '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                        version: "1.5",
+                        body: [
+                          {
+                            type: "Image",
+                            id: "image1",
+                            url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                          },
+                          {
+                            type: "TextBlock",
+                            size: "Medium",
+                            id: "text1",
+                            text: "You've Successfully registered for Full Conference Only event.",
+                            style: "default",
+                            wrap: true
+                          },
+                          {
+                            type: "Table",
+                            id: "table1",
+                            columns: [
+                              {
+                                width: "1"
+                              },
+                              {
+                                width: "1"
+                              }
+                            ],
+                            rows: [
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event ID:",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventID),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fonttype: "Default",
+                                        id: "Eid"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Participant Name:",
+                                        id: "pn",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id1),
+                                        wrap: true,
+                                        id: "pn1",
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fontType: "Default"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Email:",
+                                        id: "em",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id2),
+                                        wrap: true,
+                                        id: "em1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Phone No:",
+                                        id: "pno",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id3),
+                                        id: "pno1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Name:",
+                                        id: "Ename",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Full Conference Only",
+                                        id: "Ename1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Adderss:",
+                                        id: "Adderss",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "MGM Conference Center Grand Ballroom Foyer",
+                                        wrap: true,
+                                        id: "Adderss1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Bulding Name:",
+                                        id: "BN",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "GRAND GARDEN ARENA",
+                                        wrap: true,
+                                        id: "BN1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Date:",
+                                        id: "Ed",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventDate),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        id: "Ed1"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+
+            - kind: AdaptiveCardPrompt
+              id: 9wIhhA
+              card: |-
+                ={
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  type: "AdaptiveCard",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Input.ChoiceSet",
+                      id: "CompactSelectVal",
+                      label: "Please Select your Booth for Reservation",
+                      weight: "bolder",
+                      size: "medium",
+                      value: "1",
+                      choices: [
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "163 Boulevard Ballroom, Level 1",
+                          value: "163 Boulevard Ballroom, Level 1"
+                        },
+                        {
+                          title: "17 Premier  Ballroom, Level 3",
+                          value: "17 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "350 Chairman Ballroom, Level 3",
+                          value: "350 Chairman Ballroom, Level 3"
+                        },
+                        {
+                          title: "318 Premier  Ballroom, Level 3",
+                          value: "318 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "311 Premier  Ballroom, Level 3",
+                          value: "311 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "316 Premier  Ballroom, Level 3",
+                          value: "316 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        }
+                      ]
+                    }
+                  ],
+                  actions: [
+                    {
+                      type: "Action.Submit",
+                      title: "Save Booth"
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  CompactSelectVal: Topic.CompactSelectVal
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  CompactSelectVal: String
+
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_iGNbJw
+              input:
+                binding:
+                  text_1: =Topic.CompactSelectVal
+
+              output:
+                binding:
+                  price1: Topic.price1
+
+              flowId: 99535747-8757-ee11-be6f-000d3a9d75c4
+
+            - kind: AdaptiveCardPrompt
+              id: 7ZbnjC
+              card: |-
+                ={
+                  type: "AdaptiveCard",
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Image",
+                      id: "image1",
+                      url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                    },
+                    {
+                      type: "TextBlock",
+                      size: "Medium",
+                      id: "text1",
+                      text: "Your Selected Booth and Price Details:",
+                      style: "default",
+                      wrap: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Selected Booth:",
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text:(Topic.CompactSelectVal),
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Price: $" &(Topic.price1),
+                      weight: "Bolder",
+                      size: "Medium",
+                      style: "heading",
+                      wrap: true
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Submit",
+                          data: {
+                            formAction: "submit1"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Reselect Booth",
+                          data: {
+                            formAction: "submit2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  formAction: Topic.formAction
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  formAction: String
+
+            - kind: ConditionGroup
+              id: conditionGroup_cFpi0q
+              conditions:
+                - id: conditionItem_OtrMBa
+                  condition: =Topic.formAction = "submit1"
+                  actions:
+                    - kind: InvokeFlowAction
+                      id: xRxBUq
+                      input:
+                        binding:
+                          number: =1
+                          text: =Topic.CompactSelectVal
+                          text_1: =Topic.id1
+                          text_2: =Topic.EventID
+
+                      output:
+                        binding:
+                          booth_booking_id: Topic.BoothBookingID
+
+                      flowId: 7a4354b5-5a56-ee11-be6f-000d3a9d75c4
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_TQyHas
+                      input:
+                        binding:
+                          text: =Topic.id1
+                          text_1: =Topic.EventID
+                          text_2: =Topic.BoothBookingID
+                          text_3: =Topic.price1
+
+                      output:
+                        binding:
+                          imgbody: Topic.ImgBody
+
+                      flowId: 58c28c78-9b57-ee11-be6f-000d3a9d75c4
+
+                    - kind: SendActivity
+                      id: I3BS0t
+                      activity:
+                        attachments:
+                          - kind: AdaptiveCardTemplate
+                            cardContent: |-
+                              ={
+                                type: "AdaptiveCard",
+                                '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                                version: "1.5",
+                                body: [
+                                  {
+                                    type: "Image",
+                                    id: "image1",
+                                    url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                                  },
+                                  {
+                                    type: "TextBlock",
+                                    size: "Medium",
+                                    id: "text1",
+                                    text: "You've Successfully registered for Full Conference Only event.",
+                                    style: "default",
+                                    wrap: true
+                                  },
+                                  {
+                                    type: "Table",
+                                    id: "table1",
+                                    columns: [
+                                      {
+                                        width: "1"
+                                      },
+                                      {
+                                        width: "1"
+                                      }
+                                    ],
+                                    rows: [
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "Eid"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.BoothBookingID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothID"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Participant Name:",
+                                                id: "pn",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id1),
+                                                wrap: true,
+                                                id: "pn1",
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fontType: "Default"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Email:",
+                                                id: "em",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id2),
+                                                wrap: true,
+                                                id: "em1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Phone No:",
+                                                id: "pno",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id3),
+                                                id: "pno1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Name:",
+                                                id: "Ename",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Full Conference Only",
+                                                id: "Ename1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Name:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.CompactSelectVal),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothName"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Price:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "$"&(Topic.price1),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BootPrice"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Adderss:",
+                                                id: "Adderss",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "MGM Conference Center Grand Ballroom Foyer",
+                                                wrap: true,
+                                                id: "Adderss1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Bulding Name:",
+                                                id: "BN",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "GRAND GARDEN ARENA",
+                                                wrap: true,
+                                                id: "BN1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Date:",
+                                                id: "Ed",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventDate),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                id: "Ed1"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "Image",
+                                    id: "image2",
+                                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZPu12_SJYvvJTqPGfG-dbOuOK-LU_RFrSMv3fakzkA&s",
+                                    horizontalAlignment: "Center",
+                                    size: "Medium"
+                                }
+                                ]
+                              }
+
+                - id: conditionItem_fqehbG
+                  condition: =Topic.formAction = "submit2"
+                  actions:
+                    - kind: GotoAction
+                      id: frrQ5l
+                      actionId: 9wIhhA
+
+        - id: conditionItem_b5Yrcn
+          condition: =Topic.formAction = "submitUserData1"
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_1IWwq2
+              input:
+                binding:
+                  number: 2
+                  text: =Topic.id4
+                  text_1: =Topic.id5
+                  text_2: =Topic.id6
+
+              output:
+                binding:
+                  event_date: Topic.EventDate
+                  event_id: Topic.EventID
+                  eventguid: Topic.EventGUID
+
+              flowId: de0e854e-0356-ee11-be6f-000d3a9d75c4
+
+            - kind: SendActivity
+              id: sendActivity_XnOyUp
+              activity:
+                attachments:
+                  - kind: AdaptiveCardTemplate
+                    cardContent: |-
+                      ={
+                        type: "AdaptiveCard",
+                        '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                        version: "1.5",
+                        body: [
+                          {
+                            type: "Image",
+                            id: "image1",
+                            url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                          },
+                          {
+                            type: "TextBlock",
+                            size: "Medium",
+                            id: "text1",
+                            text: "You've Successfully registered for Full Conference Only event.",
+                            style: "default",
+                            wrap: true
+                          },
+                          {
+                            type: "Table",
+                            id: "table1",
+                            columns: [
+                              {
+                                width: "1"
+                              },
+                              {
+                                width: "1"
+                              }
+                            ],
+                            rows: [
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event ID:",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventID),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fonttype: "Default",
+                                        id: "Eid"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Participant Name:",
+                                        id: "pn",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id4),
+                                        wrap: true,
+                                        id: "pn1",
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fontType: "Default"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Email:",
+                                        id: "em",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id5),
+                                        wrap: true,
+                                        id: "em1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Phone No",
+                                        id: "pno",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id6),
+                                        id: "pno1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Name:",
+                                        id: "Ename",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "SHOW PACKAGE - 1 WORKSHOP",
+                                        id: "Ename1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Adderss:",
+                                        id: "Adderss",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "MGM Conference Center Grand Ballroom Foyer",
+                                        wrap: true,
+                                        id: "Adderss1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Bulding Name",
+                                        id: "BN",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "GRAND GARDEN ARENA",
+                                        wrap: true,
+                                        id: "BN1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Date:",
+                                        id: "Ed",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventDate),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        id: "Ed1"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+
+            - kind: AdaptiveCardPrompt
+              id: c2yfoj
+              card: |-
+                ={
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  type: "AdaptiveCard",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Input.ChoiceSet",
+                      id: "CompactSelectVal",
+                      label: "Please Select your Booth for Reservation",
+                      weight: "bolder",
+                      size: "medium",
+                      value: "1",
+                      choices: [
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "163 Boulevard Ballroom, Level 1",
+                          value: "163 Boulevard Ballroom, Level 1"
+                        },
+                        {
+                          title: "17 Premier  Ballroom, Level 3",
+                          value: "17 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "350 Chairman Ballroom, Level 3",
+                          value: "350 Chairman Ballroom, Level 3"
+                        },
+                        {
+                          title: "318 Premier  Ballroom, Level 3",
+                          value: "318 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "311 Premier  Ballroom, Level 3",
+                          value: "311 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "316 Premier  Ballroom, Level 3",
+                          value: "316 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        }
+                      ]
+                    }
+                  ],
+                  actions: [
+                    {
+                      type: "Action.Submit",
+                      title: "Save Booth"
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  CompactSelectVal: Topic.CompactSelectVal
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  CompactSelectVal: String
+
+            - kind: InvokeFlowAction
+              id: OXUC2P
+              input:
+                binding:
+                  text_1: =Topic.CompactSelectVal
+
+              output:
+                binding:
+                  price1: Topic.price1
+
+              flowId: 99535747-8757-ee11-be6f-000d3a9d75c4
+
+            - kind: AdaptiveCardPrompt
+              id: wfmzdr
+              card: |-
+                ={
+                  type: "AdaptiveCard",
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Image",
+                      id: "image1",
+                      url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                    },
+                    {
+                      type: "TextBlock",
+                      size: "Medium",
+                      id: "text1",
+                      text: "Your Selected Booth and Price Details:",
+                      style: "default",
+                      wrap: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Selected Booth:",
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text:(Topic.CompactSelectVal),
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Price: $" &(Topic.price1),
+                      weight: "Bolder",
+                      size: "Medium",
+                      style: "heading",
+                      wrap: true
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Submit",
+                          data: {
+                            formAction: "submit1"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Reselect Booth",
+                          data: {
+                            formAction: "submit2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  formAction: Topic.formAction
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  formAction: String
+
+            - kind: ConditionGroup
+              id: LzbbJS
+              conditions:
+                - id: oZKxyy
+                  condition: =Topic.formAction = "submit1"
+                  actions:
+                    - kind: InvokeFlowAction
+                      id: SIb4II
+                      input:
+                        binding:
+                          number: =2
+                          text: =Topic.CompactSelectVal
+                          text_1: =Topic.id4
+                          text_2: =Topic.EventID
+
+                      output:
+                        binding:
+                          booth_booking_id: Topic.BoothBookingID
+
+                      flowId: 7a4354b5-5a56-ee11-be6f-000d3a9d75c4
+
+                    - kind: InvokeFlowAction
+                      id: y6sORO
+                      input:
+                        binding:
+                          text: =Topic.id4
+                          text_1: =Topic.EventID
+                          text_2: =Topic.BoothBookingID
+                          text_3: =Topic.price1
+
+                      output:
+                        binding:
+                          imgbody: Topic.ImgBody
+
+                      flowId: 58c28c78-9b57-ee11-be6f-000d3a9d75c4
+
+                    - kind: SendActivity
+                      id: 19zzgb
+                      activity:
+                        attachments:
+                          - kind: AdaptiveCardTemplate
+                            cardContent: |-
+                              ={
+                                type: "AdaptiveCard",
+                                '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                                version: "1.5",
+                                body: [
+                                  {
+                                    type: "Image",
+                                    id: "image1",
+                                    url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                                  },
+                                  {
+                                    type: "TextBlock",
+                                    size: "Medium",
+                                    id: "text1",
+                                    text: "You've Successfully registered for Full Conference Only event.",
+                                    style: "default",
+                                    wrap: true
+                                  },
+                                  {
+                                    type: "Table",
+                                    id: "table1",
+                                    columns: [
+                                      {
+                                        width: "1"
+                                      },
+                                      {
+                                        width: "1"
+                                      }
+                                    ],
+                                    rows: [
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "Eid"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.BoothBookingID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothID"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Participant Name:",
+                                                id: "pn",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id4),
+                                                wrap: true,
+                                                id: "pn1",
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fontType: "Default"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Email:",
+                                                id: "em",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id5),
+                                                wrap: true,
+                                                id: "em1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Phone No:",
+                                                id: "pno",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id6),
+                                                id: "pno1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Name:",
+                                                id: "Ename",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "SHOW PACKAGE - 1 WORKSHOP Includes full conference registration,ONE optional full-day workshop",
+                                                id: "Ename1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Name:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.CompactSelectVal),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothName"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Price:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "$"&(Topic.price1),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BootPrice"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Adderss:",
+                                                id: "Adderss",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "MGM Conference Center Grand Ballroom Foyer",
+                                                wrap: true,
+                                                id: "Adderss1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Bulding Name:",
+                                                id: "BN",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "GRAND GARDEN ARENA",
+                                                wrap: true,
+                                                id: "BN1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Date:",
+                                                id: "Ed",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventDate),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                id: "Ed1"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "Image",
+                                    id: "image2",
+                                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZPu12_SJYvvJTqPGfG-dbOuOK-LU_RFrSMv3fakzkA&s",
+                                    horizontalAlignment: "Center",
+                                    size: "Medium"
+                                }
+                                ]
+                              }
+
+                - id: hoRk5B
+                  condition: =Topic.formAction = "submit2"
+                  actions:
+                    - kind: GotoAction
+                      id: dLBACj
+                      actionId: c2yfoj
+
+        - id: conditionItem_BFLpkn
+          condition: =Topic.formAction = "submitUserData2"
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_d45F4K
+              input:
+                binding:
+                  number: 3
+                  text: =Topic.id7
+                  text_1: =Topic.id8
+                  text_2: =Topic.id9
+
+              output:
+                binding:
+                  event_date: Topic.EventDate
+                  event_id: Topic.EventID
+                  eventguid: Topic.EventGUID
+
+              flowId: de0e854e-0356-ee11-be6f-000d3a9d75c4
+
+            - kind: SendActivity
+              id: sendActivity_o98Ib3
+              activity:
+                attachments:
+                  - kind: AdaptiveCardTemplate
+                    cardContent: |-
+                      ={
+                        type: "AdaptiveCard",
+                        '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                        version: "1.5",
+                        body: [
+                          {
+                            type: "Image",
+                            id: "image1",
+                            url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                          },
+                          {
+                            type: "TextBlock",
+                            size: "Medium",
+                            id: "text1",
+                            text: "You've Successfully registered for Full Conference Only event.",
+                            style: "default",
+                            wrap: true
+                          },
+                          {
+                            type: "Table",
+                            id: "table1",
+                            columns: [
+                              {
+                                width: "1"
+                              },
+                              {
+                                width: "1"
+                              }
+                            ],
+                            rows: [
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event ID:",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventID),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fonttype: "Default",
+                                        id: "Eid"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Participant Name:",
+                                        id: "pn",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id7),
+                                        wrap: true,
+                                        id: "pn1",
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fontType: "Default"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Email:",
+                                        id: "em",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id8),
+                                        wrap: true,
+                                        id: "em1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Phone No:",
+                                        id: "pno",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id9),
+                                        id: "pno1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Name:",
+                                        id: "Ename",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "COMPLETE PACKAGE - 2 WORKSHOPS",
+                                        id: "Ename1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Adderss:",
+                                        id: "Adderss",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "MGM Conference Center Grand Ballroom Foyer",
+                                        wrap: true,
+                                        id: "Adderss1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Bulding Name:",
+                                        id: "BN",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "GRAND GARDEN ARENA",
+                                        wrap: true,
+                                        id: "BN1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Date:",
+                                        id: "Ed",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventDate),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        id: "Ed1"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+
+            - kind: AdaptiveCardPrompt
+              id: l33Dfq
+              card: |-
+                ={
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  type: "AdaptiveCard",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Input.ChoiceSet",
+                      id: "CompactSelectVal",
+                      label: "Please Select your Booth for Reservation",
+                      weight: "bolder",
+                      size: "medium",
+                      value: "1",
+                      choices: [
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "163 Boulevard Ballroom, Level 1",
+                          value: "163 Boulevard Ballroom, Level 1"
+                        },
+                        {
+                          title: "17 Premier  Ballroom, Level 3",
+                          value: "17 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "350 Chairman Ballroom, Level 3",
+                          value: "350 Chairman Ballroom, Level 3"
+                        },
+                        {
+                          title: "318 Premier  Ballroom, Level 3",
+                          value: "318 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "311 Premier  Ballroom, Level 3",
+                          value: "311 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "316 Premier  Ballroom, Level 3",
+                          value: "316 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        }
+                      ]
+                    }
+                  ],
+                  actions: [
+                    {
+                      type: "Action.Submit",
+                      title: "Save Booth"
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  CompactSelectVal: Topic.CompactSelectVal
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  CompactSelectVal: String
+
+            - kind: InvokeFlowAction
+              id: djBY5F
+              input:
+                binding:
+                  text_1: =Topic.CompactSelectVal
+
+              output:
+                binding:
+                  price1: Topic.price1
+
+              flowId: 99535747-8757-ee11-be6f-000d3a9d75c4
+
+            - kind: AdaptiveCardPrompt
+              id: oajswy
+              card: |-
+                ={
+                  type: "AdaptiveCard",
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Image",
+                      id: "image1",
+                      url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                    },
+                    {
+                      type: "TextBlock",
+                      size: "Medium",
+                      id: "text1",
+                      text: "Your Selected Booth and Price Details:",
+                      style: "default",
+                      wrap: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Selected Booth:",
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text:(Topic.CompactSelectVal),
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Price: $" &(Topic.price1),
+                      weight: "Bolder",
+                      size: "Medium",
+                      style: "heading",
+                      wrap: true
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Submit",
+                          data: {
+                            formAction: "submit1"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Reselect Booth",
+                          data: {
+                            formAction: "submit2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  formAction: Topic.formAction
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  formAction: String
+
+            - kind: ConditionGroup
+              id: X25mIF
+              conditions:
+                - id: EG2UlU
+                  condition: =Topic.formAction = "submit1"
+                  actions:
+                    - kind: InvokeFlowAction
+                      id: hKZQM9
+                      input:
+                        binding:
+                          number: =3
+                          text: =Topic.CompactSelectVal
+                          text_1: =Topic.id7
+                          text_2: =Topic.EventID
+
+                      output:
+                        binding:
+                          booth_booking_id: Topic.BoothBookingID
+
+                      flowId: 7a4354b5-5a56-ee11-be6f-000d3a9d75c4
+
+                    - kind: InvokeFlowAction
+                      id: U5gYWn
+                      input:
+                        binding:
+                          text: =Topic.id7
+                          text_1: =Topic.EventID
+                          text_2: =Topic.BoothBookingID
+                          text_3: =Topic.price1
+
+                      output:
+                        binding:
+                          imgbody: Topic.ImgBody
+
+                      flowId: 58c28c78-9b57-ee11-be6f-000d3a9d75c4
+
+                    - kind: SendActivity
+                      id: eJWRt6
+                      activity:
+                        attachments:
+                          - kind: AdaptiveCardTemplate
+                            cardContent: |-
+                              ={
+                                type: "AdaptiveCard",
+                                '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                                version: "1.5",
+                                body: [
+                                  {
+                                    type: "Image",
+                                    id: "image1",
+                                    url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                                  },
+                                  {
+                                    type: "TextBlock",
+                                    size: "Medium",
+                                    id: "text1",
+                                    text: "You've Successfully registered for Full Conference Only event.",
+                                    style: "default",
+                                    wrap: true
+                                  },
+                                  {
+                                    type: "Table",
+                                    id: "table1",
+                                    columns: [
+                                      {
+                                        width: "1"
+                                      },
+                                      {
+                                        width: "1"
+                                      }
+                                    ],
+                                    rows: [
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "Eid"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.BoothBookingID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothID"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Participant Name:",
+                                                id: "pn",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id7),
+                                                wrap: true,
+                                                id: "pn1",
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fontType: "Default"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Email:",
+                                                id: "em",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id8),
+                                                wrap: true,
+                                                id: "em1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Phone No:",
+                                                id: "pno",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id9),
+                                                id: "pno1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Name:",
+                                                id: "Ename",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "COMPLETE PACKAGE - 2 WORKSHOPS Includes full conference registration, TWO optional full-day workshops",
+                                                id: "Ename1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Name:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.CompactSelectVal),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothName"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Price:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "$"&(Topic.price1),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BootPrice"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Adderss:",
+                                                id: "Adderss",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "MGM Conference Center Grand Ballroom Foyer",
+                                                wrap: true,
+                                                id: "Adderss1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Bulding Name:",
+                                                id: "BN",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "GRAND GARDEN ARENA",
+                                                wrap: true,
+                                                id: "BN1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Date:",
+                                                id: "Ed",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventDate),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                id: "Ed1"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "Image",
+                                    id: "image2",
+                                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZPu12_SJYvvJTqPGfG-dbOuOK-LU_RFrSMv3fakzkA&s",
+                                    horizontalAlignment: "Center",
+                                    size: "Medium"
+                                }
+                                ]
+                              }
+
+                - id: 4FiFLt
+                  condition: =Topic.formAction = "submit2"
+                  actions:
+                    - kind: GotoAction
+                      id: Z9XFmA
+                      actionId: l33Dfq
+
+        - id: conditionItem_c9BS6x
+          condition: =Topic.formAction = "submitUserData3"
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_pl7gEw
+              input:
+                binding:
+                  number: 4
+                  text: =Topic.id10
+                  text_1: =Topic.id11
+                  text_2: =Topic.id12
+
+              output:
+                binding:
+                  event_date: Topic.EventDate
+                  event_id: Topic.EventID
+                  eventguid: Topic.EventGUID
+
+              flowId: de0e854e-0356-ee11-be6f-000d3a9d75c4
+
+            - kind: SendActivity
+              id: sendActivity_W9mGkT
+              activity:
+                attachments:
+                  - kind: AdaptiveCardTemplate
+                    cardContent: |-
+                      ={
+                        type: "AdaptiveCard",
+                        '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                        version: "1.5",
+                        body: [
+                          {
+                            type: "Image",
+                            id: "image1",
+                            url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                          },
+                          {
+                            type: "TextBlock",
+                            size: "Medium",
+                            id: "text1",
+                            text: "You've Successfully registered for Full Conference Only event.",
+                            style: "default",
+                            wrap: true
+                          },
+                          {
+                            type: "Table",
+                            id: "table1",
+                            columns: [
+                              {
+                                width: "1"
+                              },
+                              {
+                                width: "1"
+                              }
+                            ],
+                            rows: [
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event ID:",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventID),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fonttype: "Default",
+                                        id: "Eid"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Participant Name:",
+                                        id: "pn",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id10),
+                                        wrap: true,
+                                        id: "pn1",
+                                        weight: "Bolder",
+                                        spacing: "None",
+                                        fontType: "Default"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Email:",
+                                        id: "em",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id11),
+                                        wrap: true,
+                                        id: "em1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Phone No:",
+                                        id: "pno",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.id12),
+                                        id: "pno1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Name:",
+                                        id: "Ename",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "COMPLETE PACKAGE - 3 WORKSHOPS",
+                                        id: "Ename1",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Adderss:",
+                                        id: "Adderss",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "MGM Conference Center Grand Ballroom Foyer",
+                                        wrap: true,
+                                        id: "Adderss1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Bulding Name:",
+                                        id: "BN",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "GRAND GARDEN ARENA",
+                                        wrap: true,
+                                        id: "BN1",
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                type: "TableRow",
+                                cells: [
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: "Event Date:",
+                                        id: "Ed",
+                                        wrap: true,
+                                        weight: "Bolder"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "TableCell",
+                                    items: [
+                                      {
+                                        type: "TextBlock",
+                                        text: (Topic.EventDate),
+                                        wrap: true,
+                                        weight: "Bolder",
+                                        id: "Ed1"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+
+            - kind: AdaptiveCardPrompt
+              id: iRUhj4
+              card: |-
+                ={
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  type: "AdaptiveCard",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Input.ChoiceSet",
+                      id: "CompactSelectVal",
+                      label: "Please Select your Booth for Reservation",
+                      weight: "bolder",
+                      size: "medium",
+                      value: "1",
+                      choices: [
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "163 Boulevard Ballroom, Level 1",
+                          value: "163 Boulevard Ballroom, Level 1"
+                        },
+                        {
+                          title: "17 Premier  Ballroom, Level 3",
+                          value: "17 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "350 Chairman Ballroom, Level 3",
+                          value: "350 Chairman Ballroom, Level 3"
+                        },
+                        {
+                          title: "318 Premier  Ballroom, Level 3",
+                          value: "318 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "311 Premier  Ballroom, Level 3",
+                          value: "311 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "319 Premier  Ballroom, Level 3",
+                          value: "319 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "316 Premier  Ballroom, Level 3",
+                          value: "316 Premier  Ballroom, Level 3"
+                        },
+                        {
+                          title: "310 Premier  Ballroom, Level 3",
+                          value: "310 Premier  Ballroom, Level 3"
+                        }
+                      ]
+                    }
+                  ],
+                  actions: [
+                    {
+                      type: "Action.Submit",
+                      title: "Save Booth"
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  CompactSelectVal: Topic.CompactSelectVal
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  CompactSelectVal: String
+
+            - kind: InvokeFlowAction
+              id: Bb4L4c
+              input:
+                binding:
+                  text_1: =Topic.CompactSelectVal
+
+              output:
+                binding:
+                  price1: Topic.price1
+
+              flowId: 99535747-8757-ee11-be6f-000d3a9d75c4
+
+            - kind: AdaptiveCardPrompt
+              id: tLSjXp
+              card: |-
+                ={
+                  type: "AdaptiveCard",
+                  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                  version: "1.5",
+                  body: [
+                    {
+                      type: "Image",
+                      id: "image1",
+                      url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                    },
+                    {
+                      type: "TextBlock",
+                      size: "Medium",
+                      id: "text1",
+                      text: "Your Selected Booth and Price Details:",
+                      style: "default",
+                      wrap: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Selected Booth:",
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text:(Topic.CompactSelectVal),
+                      weight: "Bolder",
+                      size:"Medium",
+                      style: "heading",
+                      wra: true
+                    },
+                    {
+                      type: "TextBlock",
+                      text: "Price: $" &(Topic.price1),
+                      weight: "Bolder",
+                      size: "Medium",
+                      style: "heading",
+                      wrap: true
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Submit",
+                          data: {
+                            formAction: "submit1"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      type: "ActionSet",
+                      actions: [
+                        {
+                          type: "Action.Submit",
+                          title: "Reselect Booth",
+                          data: {
+                            formAction: "submit2"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              output:
+                binding:
+                  actionSubmitId: Topic.actionSubmitId
+                  formAction: Topic.formAction
+
+              outputType:
+                properties:
+                  actionSubmitId: String
+                  formAction: String
+
+            - kind: ConditionGroup
+              id: Q60doH
+              conditions:
+                - id: 7dIdQr
+                  condition: =Topic.formAction = "submit1"
+                  actions:
+                    - kind: InvokeFlowAction
+                      id: 4coJh4
+                      input:
+                        binding:
+                          number: =4
+                          text: =Topic.CompactSelectVal
+                          text_1: =Topic.id10
+                          text_2: =Topic.EventID
+
+                      output:
+                        binding:
+                          booth_booking_id: Topic.BoothBookingID
+
+                      flowId: 7a4354b5-5a56-ee11-be6f-000d3a9d75c4
+
+                    - kind: InvokeFlowAction
+                      id: 8Z9VA9
+                      input:
+                        binding:
+                          text: =Topic.id10
+                          text_1: =Topic.EventID
+                          text_2: =Topic.BoothBookingID
+                          text_3: =Topic.price1
+
+                      output:
+                        binding:
+                          imgbody: Topic.ImgBody
+
+                      flowId: 58c28c78-9b57-ee11-be6f-000d3a9d75c4
+
+                    - kind: SendActivity
+                      id: M95TiP
+                      activity:
+                        attachments:
+                          - kind: AdaptiveCardTemplate
+                            cardContent: |-
+                              ={
+                                type: "AdaptiveCard",
+                                '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+                                version: "1.5",
+                                body: [
+                                  {
+                                    type: "Image",
+                                    id: "image1",
+                                    url: "https://devblogs.microsoft.com/powerplatform/wp-content/uploads/sites/79/2023/08/Power-AI-Hack-Banner-Final-min.png"
+                                  },
+                                  {
+                                    type: "TextBlock",
+                                    size: "Medium",
+                                    id: "text1",
+                                    text: "You've Successfully registered for Full Conference Only event.",
+                                    style: "default",
+                                    wrap: true
+                                  },
+                                  {
+                                    type: "Table",
+                                    id: "table1",
+                                    columns: [
+                                      {
+                                        width: "1"
+                                      },
+                                      {
+                                        width: "1"
+                                      }
+                                    ],
+                                    rows: [
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "Eid"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth ID:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.BoothBookingID),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothID"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Participant Name:",
+                                                id: "pn",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id10),
+                                                wrap: true,
+                                                id: "pn1",
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fontType: "Default"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Email:",
+                                                id: "em",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id11),
+                                                wrap: true,
+                                                id: "em1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Phone No:",
+                                                id: "pno",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.id12),
+                                                id: "pno1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Name:",
+                                                id: "Ename",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "COMPLETE PACKAGE - 3 WORKSHOPS Includes full conference registration,THREE optional full-day workshops",
+                                                id: "Ename1",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Name:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.CompactSelectVal),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BoothName"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Booth Price:",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "$"&(Topic.price1),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                spacing: "None",
+                                                fonttype: "Default",
+                                                id: "BootPrice"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Adderss:",
+                                                id: "Adderss",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "MGM Conference Center Grand Ballroom Foyer",
+                                                wrap: true,
+                                                id: "Adderss1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Bulding Name:",
+                                                id: "BN",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "GRAND GARDEN ARENA",
+                                                wrap: true,
+                                                id: "BN1",
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        type: "TableRow",
+                                        cells: [
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: "Event Date:",
+                                                id: "Ed",
+                                                wrap: true,
+                                                weight: "Bolder"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            type: "TableCell",
+                                            items: [
+                                              {
+                                                type: "TextBlock",
+                                                text: (Topic.EventDate),
+                                                wrap: true,
+                                                weight: "Bolder",
+                                                id: "Ed1"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    type: "Image",
+                                    id: "image2",
+                                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZPu12_SJYvvJTqPGfG-dbOuOK-LU_RFrSMv3fakzkA&s",
+                                    horizontalAlignment: "Center",
+                                    size: "Medium"
+                                }
+                                ]
+                              }
+
+                - id: fJeD0Q
+                  condition: =Topic.formAction = "submit2"
+                  actions:
+                    - kind: GotoAction
+                      id: 5UsQ2i
+                      actionId: iRUhj4
+
+    - kind: BeginDialog
+      id: MzRwCu
+      dialog: Default_eventBoothReservation.topic.ConversationStart

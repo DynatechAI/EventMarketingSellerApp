@@ -1,0 +1,328 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_0d757"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "345001d9-0967-43c0-80cc-ee34dba0c6b9"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Name",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "Email",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_2": {
+                  "title": "Phone",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "number": {
+                  "title": "No",
+                  "type": "number",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter a number",
+                  "x-ms-content-hint": "NUMBER"
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2",
+                "number"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "runAfter": {
+            "Add_a_new_row": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "9256de72-64a9-4b78-936f-07889964f848"
+          },
+          "type": "Response",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "event_id": "@outputs('Add_a_new_row')?['body/new_name']",
+              "event_date": "@variables('Event Date')",
+              "eventguid": "@outputs('Add_a_new_row')?['body/new_eventid']"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "title": "Event ID",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                },
+                "event_date": {
+                  "title": "Event Date",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                },
+                "eventguid": {
+                  "title": "EventGUID",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "Add_a_new_row": {
+          "runAfter": {
+            "Switch": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "75ea7259-51be-4bb4-8495-e61582f7b2eb"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "new_events",
+              "item/new_address": "MGM Conference Center Grand Ballroom Foyer",
+              "item/new_buildingname": "GRAND GARDEN ARENA",
+              "item/new_email": "@triggerBody()['text_1']",
+              "item/new_eventdate": "@formatDateTime(variables('Event Date'))",
+              "item/new_eventname": "@variables('Event Name')",
+              "item/new_participantname": "@triggerBody()['text']",
+              "item/new_phone": "@triggerBody()['text_2']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Switch": {
+          "runAfter": {
+            "Initialize_variable_2": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case": {
+              "case": 1,
+              "actions": {
+                "Set_variable": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "ca4f836e-9423-4abb-a1b4-32bae3444349"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Name",
+                    "value": "Full Conference Only"
+                  }
+                },
+                "Set_variable_2": {
+                  "runAfter": {
+                    "Set_variable": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ff4597f1-348d-450c-848b-4b6530e8cca5"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/01/2023"
+                  }
+                }
+              }
+            },
+            "Case_2": {
+              "case": 2,
+              "actions": {
+                "Set_variable_3": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "e50146df-4530-4d98-84cc-02dde4c63b28"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Name",
+                    "value": "SHOW PACKAGE - 1 WORKSHOP\nIncludes full conference registration, \nONE optional full-day workshop"
+                  }
+                },
+                "Set_variable_4": {
+                  "runAfter": {
+                    "Set_variable_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "fa607f2c-ca4f-403d-8734-85f1b15c9ecf"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/02/2023"
+                  }
+                }
+              }
+            },
+            "Case_3": {
+              "case": 3,
+              "actions": {
+                "Set_variable_5": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "d9b99aef-acc9-4917-bbd9-3b8f5034c4ac"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Name",
+                    "value": "PACKAGE - 2 WORKSHOPS \nIncludes full conference registration, \nTWO optional full-day workshops"
+                  }
+                },
+                "Set_variable_6": {
+                  "runAfter": {
+                    "Set_variable_5": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3b369ab6-b0b4-4d3f-8713-0511941f6fb1"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/06/2023"
+                  }
+                }
+              }
+            },
+            "Case_4": {
+              "case": 4,
+              "actions": {
+                "Set_variable_7": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "1eaef9f5-e293-4d77-ab69-648abaf5caab"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Name",
+                    "value": "COMPLETE PACKAGE - 3 WORKSHOPS \nIncludes full conference registration,\nTHREE optional full-day workshops"
+                  }
+                },
+                "Set_variable_8": {
+                  "runAfter": {
+                    "Set_variable_7": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "cf96d3b1-a03d-44a5-8a53-44470c410009"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/05/2023"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerBody()['number']",
+          "metadata": {
+            "operationMetadataId": "249048e5-aa52-441d-b22e-f9a6178cafcc"
+          },
+          "type": "Switch"
+        },
+        "Initialize_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "ac685271-bf34-4382-a210-44dae6be308e"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Event Name",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_2": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "36ceb338-3b3f-4793-85df-dc2eaf2149a4"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Event Date",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "c9cd2c4e691a4646adc8aa592c88489b"
+  },
+  "schemaVersion": "1.0.0.0"
+}

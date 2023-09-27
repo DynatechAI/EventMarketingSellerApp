@@ -1,0 +1,171 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_new-5fbarcode-20generator-5f9736724c3108175c": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharednew5fbarcode20generator5f9736724c3108175c_3a296"
+        },
+        "api": {
+          "name": "shared_new-5fbarcode-20generator-5f9736724c3108175c",
+          "logicalName": "new_5Fbarcode-20generator"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_3fd4d"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "86332006-2eb1-403f-af5d-6770626f547e"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "ParticipantName",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "EventID",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_2": {
+                  "title": "BoothID",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_3": {
+                  "title": "Price",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2",
+                "text_3"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "runAfter": {
+            "Create_file": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ba4e3163-f75b-455a-a49a-697830f3bc19"
+          },
+          "type": "Response",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "imgbody": "@{body('Generate_Barcode')}.png"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "imgbody": {
+                  "title": "ImgBody",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "Generate_Barcode": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "9870a935-e9ff-446d-a0a4-d3f8b72a3eec"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_new-5fbarcode-20generator-5f9736724c3108175c",
+              "operationId": "GenerateBarcode",
+              "apiId": ""
+            },
+            "parameters": {
+              "symbology": "qrcode",
+              "text": "Participant Name:@{triggerBody()['text']}\nEvent ID:@{triggerBody()['text_1']}\nBooth ID:@{triggerBody()['text_2']}\nPrice:@{triggerBody()['text_3']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Create_file": {
+          "runAfter": {
+            "Generate_Barcode": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "cc8afee4-4324-4a32-be6e-3808c9e766e0"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "CreateFile",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://trailraju.sharepoint.com/sites/QRCode",
+              "folderPath": "/Shared Documents",
+              "name": "@{triggerBody()['text_1']}.png",
+              "body": "@body('Generate_Barcode')"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "c9cd2c4e691a4646adc8aa592c88489b"
+  },
+  "schemaVersion": "1.0.0.0"
+}

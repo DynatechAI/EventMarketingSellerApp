@@ -1,0 +1,411 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_0d757"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "1dfd58b3-f238-4813-ad94-d499655f6917"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Booth Name",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "Employee Name",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "number": {
+                  "title": "Number",
+                  "type": "number",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter a number",
+                  "x-ms-content-hint": "NUMBER"
+                },
+                "text_2": {
+                  "title": "EventGuid",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "number",
+                "text_2"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Return_value(s)_to_Power_Virtual_Agents": {
+          "runAfter": {
+            "Condition": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fae863d1-5d77-49c1-8bf4-96a1bc755273"
+          },
+          "type": "Response",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "booth_booking_id": "@variables('Booth Booking ID')"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "booth_booking_id": {
+                  "title": "Booth Booking ID",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "List_rows": {
+          "runAfter": {
+            "Switch": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f7083da3-133a-49a7-b0e5-10b3bf0796ed"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "new_booths",
+              "$filter": "new_boothname eq '@{triggerBody()['text']}'",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Switch": {
+          "runAfter": {
+            "Initialize_variable_3": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case": {
+              "case": 1,
+              "actions": {
+                "Set_variable": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "b05025fb-d6e9-46ff-a005-4863261994b1"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/01/2023"
+                  }
+                }
+              }
+            },
+            "Case_2": {
+              "case": 2,
+              "actions": {
+                "Set_variable_2": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "a83dd984-b393-4cd7-8bbf-d83255bd5bac"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/02/2023"
+                  }
+                }
+              }
+            },
+            "Case_3": {
+              "case": 3,
+              "actions": {
+                "Set_variable_3": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "a3d980f7-c430-4d73-b60d-ed8c9aba1dc9"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/06/2023"
+                  }
+                }
+              }
+            },
+            "Case_4": {
+              "case": 4,
+              "actions": {
+                "Set_variable_4": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "20f86200-22c1-4b3e-a931-64d16dccf90b"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Event Date",
+                    "value": "09/05/2023"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerBody()['number']",
+          "metadata": {
+            "operationMetadataId": "a485895c-4594-41e4-8ea8-7f8b8d3f5b70"
+          },
+          "type": "Switch"
+        },
+        "Initialize_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "087e8778-9020-4ce8-a9b8-7be89fb2a973"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Event Date",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Apply_to_each": {
+              "foreach": "@outputs('List_rows')?['body/value']",
+              "actions": {
+                "Add_a_new_row": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "2db7b02c-a1bc-41b5-bbb9-4dbb7e817e1c"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "new_boothbookings",
+                      "item/new_Booth@odata.bind": "/new_booths(@{items('Apply_to_each')?['new_boothid']})",
+                      "item/new_employeename": "@triggerBody()['text_1']",
+                      "item/new_eventname@odata.bind": "/new_events(@{variables('Event ID')})",
+                      "item/new_price": "@items('Apply_to_each')?['new_price']",
+                      "item/new_selecteddate": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Set_variable_5": {
+                  "runAfter": {
+                    "Add_a_new_row": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "c235109b-ca4e-4c64-8054-fadfe8e0143d"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Booth Booking ID",
+                    "value": "@outputs('Add_a_new_row')?['body/new_name']"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "ec8a1c66-254b-427d-959b-41a1983dc966"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Apply_to_each_2": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "not": {
+              "equals": [
+                "@body('List_rows')",
+                "@null"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "0dc017f9-7048-45a5-b750-54db14e6425d"
+          },
+          "type": "If"
+        },
+        "Initialize_variable_2": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6c3423b9-988f-4e73-b759-9205af478c29"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Booth Booking ID",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "List_rows_2": {
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f7083da3-133a-49a7-b0e5-10b3bf0796ed"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "new_events",
+              "$select": "new_name,new_eventid",
+              "$filter": "new_name eq '@{triggerBody()['text_2']}'",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Apply_to_each_2": {
+          "foreach": "@outputs('List_rows_2')?['body/value']",
+          "actions": {
+            "Compose": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "bdda8ab7-709e-4f70-b64d-b911d14dad15"
+              },
+              "type": "Compose",
+              "inputs": "@items('Apply_to_each_2')?['new_eventid']"
+            }
+          },
+          "runAfter": {
+            "Apply_to_each_3": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b103a129-7bac-4db9-842d-da077cf90b86"
+          },
+          "type": "Foreach"
+        },
+        "Initialize_variable_3": {
+          "runAfter": {
+            "Initialize_variable_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6c3423b9-988f-4e73-b759-9205af478c29"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Event ID",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Apply_to_each_3": {
+          "foreach": "@outputs('List_rows_2')?['body/value']",
+          "actions": {
+            "Set_variable_6": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "cf6628b3-6fd7-4b54-a9f8-581d04262379"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Event ID",
+                "value": "@items('Apply_to_each_3')?['new_eventid']"
+              }
+            }
+          },
+          "runAfter": {
+            "List_rows_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5ac45ab5-66e5-4a7f-addd-c1718490caf3"
+          },
+          "type": "Foreach"
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "c9cd2c4e691a4646adc8aa592c88489b"
+  },
+  "schemaVersion": "1.0.0.0"
+}

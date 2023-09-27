@@ -1,0 +1,22 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Untitled
+    triggerQueries:
+      - Event Registration inquiry
+      - Event date
+      - date
+
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: searchAndSummarizeContent_2RT2GA
+      userInput: Evente registration date
+      publicDataSource:
+        kind: PublicSiteSearchDataSource
+        sites:
+          - "https://powerplatformconf.com/#!/news"
+
+      sharePointSearchDataSource: {}
+      customDataSource: {}
